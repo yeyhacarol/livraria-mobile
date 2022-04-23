@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Rokkitt&display=swap');
+
+/* reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rokkitt', serif;
+    background-color: #000;
+}
+
+/* header */
+header {
+    width: 100%;
+    min-height: 70px;
+
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.logo {
+    font-family: 'Inconsolata', monospace;
+
+    text-align: center;
+}
+.logo h1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+.logo h2 {
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+#nav-items {
+    display: none;
+
+    background-color: #000;
+}
+
+#nav-items a {
+    font-size: 1.2rem;
+    color: #fff;
+
+    display: block;
+    padding: 10px 0px 10px 10px;
+    text-decoration: none;
+}
+
+.nav a.icon {   
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px 0px 0px 10px;
+}
+
+.nav a.icon img {
+    width: 45px;
+    height: 40px;
+}
+
+#line {
+    border: 1px solid #000;
+}
+
+/* home */
+#home {
+    width: 100%;
+    height: 80vh;
+
+    margin-bottom: 50px;
+}
+
+#home img {
+    width: 100%;
+    height: 80vh;
+
+    object-fit: cover;
+    position: relative;
+}
+
+.home-content {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+}
+.home-content h1 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #fff;
+
+    margin-bottom: 10px;
+}
+
+.shop-button {
+    width: 110px;
+    height: 35px;
+
+    text-align: center;
+    
+    border: 1px solid #fff;
+}
+.shop-button a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/* destaques */
+#highlights {
+  width: 100%;
+  min-height: 70vh;
+}
+
+#highlights h1 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+   
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.slider {
+    height: 100%;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slider-button {
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 4rem;
+    color: #fff;
+    background-color: #000;
+
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#proximo {
+    right: 0;
+}
+
+.slider-item-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    overflow: hidden;
+}
+
+.slider-item {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: all ease-in 1s;  
+}
+
+.slider-item:first-child {
+    margin-left: -300px;
+}
+
+.slider-item img {
+    width: 250px;
+    height: 250px;
+
+    object-fit: contain;
+}
+
+.slider-item span {
+    width: 250px;
+
+    font-size: 1.5rem;
+    color: #fff;
+}
+
