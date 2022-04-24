@@ -8,27 +8,12 @@ const destaques = [
     {
         id: '2',
         url: './img/livro-sangue.png',
-        titulo: 'ted bundy - um estranho ao meu lado'
+        titulo: 'livros de sangue - volume 1'
     },
     {
         id: '3',
-        url: './img/leagiao.png',
-        titulo: 'ted bundy - um estranho ao meu lado'
-    },
-    {
-        id: '4',
         url: './img/frankstein.png',
-        titulo: 'ted bundy - um estranho ao meu lado'
-    },
-    {
-        id: '5',
-        url: './img/frankstein.png',
-        titulo: 'ted bundy - um estranho ao meu lado'
-    },
-    {
-        id: '6',
-        url: './img/frankstein.png',
-        titulo: 'ted bundy - um estranho ao meu lado'
+        titulo: 'frankstein'
     },
 ]
 
@@ -56,7 +41,7 @@ const gerarSlides = () => {
 
     const slides = destaques.map(item => `
         <div class="slider-item" id="slider-item">
-            <img src="${item.url}" alt="livro ted bundy">
+            <img src="${item.url}">
             <span>${item.titulo}</span>
         </div>`)
 
@@ -75,11 +60,7 @@ const geraSlide = () => {
 
 geraSlide(destaques)
 
-if (destaques.length < 5) {
-    document.getElementById('slider-item').style.marginLeft = '0px'
-}
-
-const sliderItemContainer = document.querySelector('.slider-item-container')
+/* const sliderItemContainer = document.querySelector('.slider-item-container')
 let sliderItems = document.querySelectorAll('.slider-item')
 
 const itemAnterior = () => {
@@ -99,4 +80,4 @@ const proximoItem = () => {
 }
 
 document.getElementById('anterior').addEventListener('click', itemAnterior)
-document.getElementById('proximo').addEventListener('click', proximoItem)
+document.getElementById('proximo').addEventListener('click', proximoItem) */

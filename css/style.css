@@ -7,9 +7,23 @@
     box-sizing: border-box;
 }
 
+/* considerações gerais */
 body {
     font-family: 'Rokkitt', serif;
     background-color: #000;
+}
+
+#highlights h1,
+#promotions h1,
+#catalogue h1 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
 }
 
 /* header */
@@ -17,7 +31,6 @@ header {
     width: 100%;
     min-height: 70px;
 
-    margin-bottom: 20px;
     background-color: #fff;
 }
 
@@ -26,17 +39,24 @@ header {
 
     text-align: center;
 }
+
 .logo h1 {
     font-size: 2rem;
     font-weight: 500;
 }
+
 .logo h2 {
     font-size: 1.5rem;
     font-weight: lighter;
 }
 
 #nav-items {
+    width: 100%;
+
     display: none;
+    position: absolute;
+    z-index: 10;
+    top: 70px;
 
     background-color: #000;
 }
@@ -50,7 +70,7 @@ header {
     text-decoration: none;
 }
 
-.nav a.icon {   
+.nav a.icon {
     position: absolute;
     left: 0;
     top: 0;
@@ -60,10 +80,6 @@ header {
 .nav a.icon img {
     width: 45px;
     height: 40px;
-}
-
-#line {
-    border: 1px solid #000;
 }
 
 /* home */
@@ -87,6 +103,7 @@ header {
     top: 50%;
     left: 50px;
 }
+
 .home-content h1 {
     font-size: 1.5rem;
     font-weight: normal;
@@ -100,43 +117,45 @@ header {
     height: 35px;
 
     text-align: center;
-    
+
     border: 1px solid #fff;
 }
+
 .shop-button a {
     text-decoration: none;
     font-size: 1.5rem;
     color: #fff;
 }
 
-/* destaques */
-#highlights {
-  width: 100%;
-  min-height: 70vh;
-}
-
-#highlights h1 {
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: #fff;
-    text-align: center;
-   
+/* slider */
+.horizontal-scroll {
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
+
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    padding-bottom: 30px;
 }
 
 .slider {
+    width: 100%;
     height: 100%;
 
-    position: relative;
+    /* position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; */
+}
+
+.slider-container {
+    padding: 0px 20px;
 }
 
 .slider-button {
-    width: 40px;
+    display: none;
+
+    /* width: 40px;
     height: 40px;
 
     position: absolute;
@@ -149,11 +168,11 @@ header {
     background-color: #000;
 
     border-radius: 50%;
-    cursor: pointer;
+    cursor: pointer; */
 }
 
 #proximo {
-    right: 0;
+    /* right: 0; */
 }
 
 .slider-item-container {
@@ -177,24 +196,148 @@ header {
     justify-content: center;
     align-items: center;
 
-    transition: all ease-in 1s;  
+    /* transition: all ease-in 1s;   */
 }
 
 .slider-item:first-child {
-    margin-left: -300px;
+    margin-left: 0px;
 }
 
-.slider-item img {
+.slider-item img,
+.catalogue-item img {
     width: 250px;
     height: 250px;
 
-    object-fit: contain;
+    object-fit: cover;
 }
 
-.slider-item span {
+.slider-item span,
+.catalogue-item span {
     width: 250px;
+    max-height: 100px;
 
     font-size: 1.5rem;
     color: #fff;
 }
 
+/* destaques */
+#highlights {
+    width: 100%;
+    height: 80vh;
+
+    /* position: absolute; */
+}
+
+/* promoções */
+#promotions {
+    width: 100%;
+    height: 90vh;
+}
+
+.details {
+    width: 250px;
+    height: 120px;
+
+    padding: 10px 5px 5px 10px;
+
+    background-color: #b4b4b4;
+}
+
+.details .title {
+    width: 100%;
+    height: 80px;
+}
+
+.details span:first-child {
+    font-size: 1.3rem;
+    font-weight: lighter;
+
+    color: #000;
+}
+
+.prices .new-price {
+    font-weight: bold;
+    color: #000;
+}
+
+.prices .old-price {
+    font-size: 1.2rem;
+    text-decoration: line-through;
+
+    margin-right: 30px;
+}
+
+.see-more {
+    width: 250px;
+    height: 50px;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: bold;
+
+    background-color: #521616;
+}
+
+.see-more span {
+    cursor: pointer;
+}
+
+.details-line {
+    width: 100%;
+    border: 1px solid #161616;
+
+    margin-bottom: 10px;
+}
+
+/* catálogo */
+#catalogue {
+    position: relative;
+    top: 10vh;
+}
+
+.catalogue {
+    min-height: 50vh;
+    display: flex;
+}
+
+.catalogue-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.catalogue-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    margin-bottom: 30px;
+    margin-right: 30px;
+}
+
+/* menu generos */
+.catalogue .nav {
+    width: 40px;
+
+    z-index: 10;
+}
+
+.catalogue .nav img {
+    width: 45px;
+    height: 45px;
+}
+
+#nav-gender {
+    width: 250px;
+
+    background-color: #6B6B6B;
+}
+
+#nav-gender a {
+    font-size: 1.2rem;
+    color: #fff;
+    display: block;
+    padding: 10px 0px 10px 10px;
+    text-decoration: none;
+}
