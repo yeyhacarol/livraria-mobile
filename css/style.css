@@ -303,6 +303,8 @@ header {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
+    gap: 30px;
 }
 
 .catalogue-item {
@@ -311,7 +313,6 @@ header {
     align-items: flex-end;
 
     margin-bottom: 30px;
-    margin-right: 30px;
 }
 
 /* menu generos */
