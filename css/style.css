@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Rokkitt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Rokkitt:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Rokkitt:wght@300&display=swap');
 
 /* reset básico */
 * {
@@ -282,6 +284,10 @@ header {
 }
 
 /* catálogo */
+#catalogue {
+    margin-bottom: 100px;
+}
+
 .catalogue {
     display: flex;
     justify-content: center;
@@ -336,3 +342,143 @@ header {
 #nav-gender a:hover {
     background-color: #161920;
 }
+
+/* footer */
+.about-us {
+    width: 100%;
+    height: 270px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.about-us img {
+    width: 100%;
+    height: 270px;
+
+    position: absolute;
+}
+
+.line {
+    width: 100%;
+    border: 1px solid #fff;
+
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.about-us h1, .about-us span {
+    font-family: 'Inconsolata', monospace;
+    color: #fff;
+
+    position: relative;
+}
+
+.about-us h1 {
+    font-size: 1.8rem;
+    font-weight: 400;
+
+    margin-bottom: 10px;
+}
+.about-us span {
+    width: 200px;
+
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+#contact-us {
+    width: 100%;
+    height: 280px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 56px;
+
+    background-color: #fff;
+}
+
+.send-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.send-message span {
+    font-size: 1.12rem;
+    font-weight: 500;
+}
+
+.nome,
+.email, 
+.txtArea {
+    width: 200px;
+
+    font-family: 'Rokkitt';
+    font-size: 1rem;
+    font-weight: lighter;
+
+    border: 1px solid #000;
+}
+.nome, 
+.email {
+    height: 35px;
+}
+.txtArea {
+    height: 80px;
+
+    resize: none;
+}
+
+.btnEnviar {
+    width: 100px;
+    height: 30px;
+
+    font-family: 'Rokkitt';
+    font-size: 1rem;
+    font-weight: 500;
+
+    border: 1px solid #000;
+    background-color: transparent;
+}
+
+.social-media {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+}
+
+.copyright {
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright span {
+    width: 270px;
+
+    font-size: 1.12rem;
+    font-weight: lighter;
+    color: #fff;
+
+    text-align: center;
+}
+
+
