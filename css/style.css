@@ -290,7 +290,6 @@ header {
 
 .catalogue {
     display: flex;
-    justify-content: center;
     gap: 20px;
 }
 
@@ -318,17 +317,23 @@ header {
 }
 
 .catalogue .nav img {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
 }
 
 #nav-gender {
     width: 250px;
     margin-top: -10px;
 
-    display: none;
+    display: flex;
+    flex-direction: column;
 
-    background-color: #6B6B6B;
+    background-color: #6B6B6B;;
+    position: absolute;
+    
+    z-index: 100;
+    transition: transform .5s ease-in-out;
+    
 }
 
 #nav-gender a {

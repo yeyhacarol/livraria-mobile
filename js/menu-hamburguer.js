@@ -12,8 +12,10 @@ function menuHeader() {
 function menuGeneros() {
     var nav = document.getElementById("nav-gender");
     if (nav.style.display === "block") {
-        nav.style.display = "none";
+        nav.style.display = "flex";
+        nav.style.transform = "translateX(-250px)";
     } else {
         nav.style.display = "block";
+        nav.style.transform = "translateX(0px)";
     }
 }
