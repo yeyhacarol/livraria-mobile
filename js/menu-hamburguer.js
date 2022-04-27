@@ -13,7 +13,7 @@ function menuGeneros() {
     var nav = document.getElementById("nav-gender");
     if (nav.style.display === "block") {
         nav.style.display = "flex";
-        nav.style.transform = "translateX(-250px)";
+        nav.style.transform = "translateX(-245px)";
     } else {
         nav.style.display = "block";
         nav.style.transform = "translateX(0px)";

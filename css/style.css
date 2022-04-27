@@ -33,6 +33,9 @@ header {
     width: 100%;
     min-height: 70px;
 
+    position: absolute;
+    z-index: 30;
+
     background-color: #fff;
 }
 
@@ -56,9 +59,13 @@ header {
     width: 100%;
 
     display: none;
+
     position: absolute;
     z-index: 10;
     top: 70px;
+
+    /* transition: transform .5s ease-in-out;
+    transform: translateY(-240px); */
 
     background-color: #000;
 }
@@ -102,7 +109,7 @@ header {
 
 .home-content {
     position: absolute;
-    top: 50%;
+    top: 40vh;
     left: 50px;
 }
 
@@ -131,11 +138,7 @@ header {
 
 /* slider */
 .horizontal-scroll {
-    display: -ms-flexbox;
-    display: flex;
-
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;  
 }
 
 .slider {
@@ -153,9 +156,7 @@ header {
 }
 
 .slider-button {
-    display: none;
-
-    /* width: 40px;
+    width: 40px;
     height: 40px;
 
     position: absolute;
@@ -168,11 +169,11 @@ header {
     background-color: #000;
 
     border-radius: 50%;
-    cursor: pointer; */
+    cursor: pointer;
 }
 
 #proximo {
-    /* right: 0; */
+    right: 0;
 }
 
 .slider-item-container {
@@ -188,7 +189,7 @@ header {
     flex-direction: column;
     align-items: center;
 
-    /* transition: all ease-in 1s;   */
+    transition: all ease-in 1s;
 }
 
 .slider-item:first-child {
@@ -220,7 +221,7 @@ header {
 
 /* promoções */
 #promotions {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 #promotions .horizontal-scroll {
@@ -323,17 +324,18 @@ header {
 
 #nav-gender {
     width: 250px;
-    margin-top: -10px;
+    margin-top: -5.7px;
 
     display: flex;
     flex-direction: column;
 
-    background-color: #6B6B6B;;
+    background-color: #6B6B6B;
+    ;
     position: absolute;
-    
+
     z-index: 100;
     transition: transform .5s ease-in-out;
-    
+    transform: translateX(-245px);
 }
 
 #nav-gender a {
@@ -365,6 +367,7 @@ header {
     width: 100%;
     height: 270px;
 
+    object-fit: cover;
     position: absolute;
 }
 
@@ -376,7 +379,8 @@ header {
     margin-bottom: 10px;
 }
 
-.about-us h1, .about-us span {
+.about-us h1,
+.about-us span {
     font-family: 'Inconsolata', monospace;
     color: #fff;
 
@@ -389,6 +393,7 @@ header {
 
     margin-bottom: 10px;
 }
+
 .about-us span {
     width: 200px;
 
@@ -423,7 +428,7 @@ header {
 }
 
 .nome,
-.email, 
+.email,
 .txtArea {
     width: 200px;
 
@@ -433,10 +438,12 @@ header {
 
     border: 1px solid #000;
 }
-.nome, 
+
+.nome,
 .email {
     height: 35px;
 }
+
 .txtArea {
     height: 80px;
 
@@ -486,4 +493,44 @@ header {
     text-align: center;
 }
 
+@media screen and (min-width: 900px) {
+    #nav-items {
+        width: 100%;
 
+        display: flex;
+
+        position: absolute;
+        z-index: 10;
+        top: 15px;
+
+        background-color: transparent;
+    }
+
+    #nav-items a {
+        display: block;
+
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        color: #000;
+        text-decoration: none;
+    }
+
+    .nav a.icon img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .horizontal-scroll {
+        display: -ms-flexbox;
+        display: flex;
+
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .slider-button {
+        display: none;
+    }
+
+}

@@ -60,7 +60,7 @@ const geraSlide = () => {
 
 geraSlide(destaques)
 
-/* const sliderItemContainer = document.querySelector('.slider-item-container')
+const sliderItemContainer = document.querySelector('.slider-item-container')
 let sliderItems = document.querySelectorAll('.slider-item')
 
 const itemAnterior = () => {
@@ -80,4 +80,4 @@ const proximoItem = () => {
 }
 
 document.getElementById('anterior').addEventListener('click', itemAnterior)
-document.getElementById('proximo').addEventListener('click', proximoItem) */
+document.getElementById('proximo').addEventListener('click', proximoItem) 
