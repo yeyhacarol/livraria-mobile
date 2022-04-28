@@ -1,0 +1,133 @@
+#modal {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-container {
+    width: 650px;
+    height: 625px;
+
+    padding: 10px;
+
+   /*  display: flex;
+    flex-direction: column; */
+
+    background-color: #2d2d2d;
+}
+
+.book-content {
+    display: flex;
+    gap: 25px;
+}
+
+.book img {
+    width: 300px;
+    height: 350px;
+}
+
+.more-about-book {
+    width: 300px;
+    height: 450px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    position: relative;
+}
+
+.close-modal {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+
+    border: 1px solid #fff;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.book-description {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    position: absolute;
+
+    color: #fff;
+}
+.book-description .title {
+    font-size: 2rem;
+    font-weight: 500;
+}
+.author {
+    font-size: 1.5rem;
+    font-weight: 400;
+
+    margin-bottom: 10px;
+}
+.description {
+    height: 330px;
+    overflow: hidden;
+
+    font-size: 1.2rem;
+    font-weight: lighter;
+
+    text-align: justify;
+}
+
+.prices-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.freight-area {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.freight-area span {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.calculate-freight input {
+    width: 170px;
+    height: 30px;
+
+    border: 1px solid #fff;
+    font-family: 'Rokkitt';
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.calculate-freight button {
+    width: 30px;
+    height: 30px;
+
+    background-color: #fff;
+    border: 1px solid #fff;
+    font-family: 'Rokkitt';
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.book-prices {
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.subtotal, .total {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.value {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}

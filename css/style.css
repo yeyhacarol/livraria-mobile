@@ -257,8 +257,6 @@ header {
 .prices .old-price {
     font-size: 1.2rem;
     text-decoration: line-through;
-
-    margin-right: 30px;
 }
 
 .see-more {
@@ -286,6 +284,7 @@ header {
 
 /* catálogo */
 #catalogue {
+    min-height: 60vh;
     margin-bottom: 100px;
 }
 
@@ -310,14 +309,14 @@ header {
 }
 
 /* menu generos */
-.catalogue .nav {
+.catalogue #nav {
     width: 45px;
     height: 45px;
 
     z-index: 10;
 }
 
-.catalogue .nav img {
+.catalogue #nav img {
     width: 50px;
     height: 50px;
 }

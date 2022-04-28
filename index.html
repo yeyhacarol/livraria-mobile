@@ -8,7 +8,10 @@
     <link rel="icon" type="image/x-icon" href="https://livromognoafricano.com.br/wp-content/uploads/2020/09/sebos-livros-2-white.png">
     <script src="js/menu-hamburguer.js" defer></script>
     <script src="js/slider.js" defer></script>
+    <script src="js/catalogue.js" defer></script>
+    <script src="js/modal.js" defer></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
     <title>BOOKERY STUDIO</title>
 
     <script>
@@ -29,7 +32,7 @@
                 <a href="#highlights">Destaques</a>
                 <a href="#">Contate-nos</a>
             </div>
-            <a href="javascript:void(0);" class="icon" onclick="menuHeader()">
+            <a href="javascript:void(0);" class="icon" id="menu-principal">
                 <img src="img/icons/menu-hamburguer.png" alt="menu">
             </a>
         </div>
@@ -90,37 +93,19 @@
         <h1>catálogo</h1>
 
         <div class="catalogue">
-            <div class="nav" id="nav">
-                <a href="javascript:void(0);" class="gender-icon" onclick="menuGeneros()">
+            <div id="nav">
+                <a href="javascript:void(0);" id="menu-generos">
                     <img src="img/icons/menu-genero.png" alt="menu">
                 </a>
                 <div id="nav-gender">
-                    <a href="#">ação</a>
-                    <a href="#">biografia</a>
-                    <a href="#">crime</a>
-                    <a href="#">distopia</a>
-                    <a href="#">ficção</a>
+                   <!-- feito com js -->
                 </div>
             </div>
             
             <div class="catalogue-container">
-                <div class="catalogue-item">
-                    <img src="img/ted-bundy.png" alt="livro ted bundy">
-                    <div class="details">
-                        <div class="title">
-                            <span>ted bundy - um estranho ao seu lado</span>
-                        </div>
-                        <div class="prices">
-                            <span class="old-price">R$ 68,90</span>
-                            <span class="new-price">R$ 36,79</span>
-                        </div>
-                    </div>
-                    <div class="see-more">
-                        <div class="details-line"></div>
-                        <span>ver detalhes</span>
-                    </div>
-                </div>
+                <!-- feito com js -->
             </div>
+                
         </div>
     </section>
 
@@ -154,6 +139,60 @@
             </div>
         </form>
     </footer>
+
+
+    <div id="modal">
+        <div class="modal-container">
+            <div class="book-content">
+                <div class="book">
+                    <img src="img/legiao.png" alt="">
+                </div>
+                <div class="more-about-book">
+                    <div class="close-modal">X</div>
+                    <div class="book-description">
+                        <span class="title">legião</span>
+                        <span class="author">william p.</span>
+                        <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Etiam tempor eu eros eget rhoncus. Fusce placerat nulla 
+                            vel sagittis auctor. Interdum et malesuada fames ac ante
+                            ipsum primis in faucibus. Etiam volutpat condimentum 
+                            tellus facilisis tincidunt. Nunc bibendum, felis eget sodales
+                            dapibus, massa purus pretium mi, quis elementum mi elit quis velit.
+                            Integer ut luctus odio, efficitur congue arcu. Cras porttitor posuere metus,
+                            tempor efficitur ipsum elementum quis. Aenean a neque porttitor lectus. 
+                    </span>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="prices-content">
+                <div class="freight-area">
+                    <span>Calcular entrega</span>
+                    <span>CEP</span>
+                    <div class="calculate-freight">
+                        <input type="text">
+                        <button class="ok">ok</button>
+                    </div>
+                </div>
+                <div class="book-prices">
+                    <div class="subtotal">
+                        <span>subtotal</span>
+                        <div class="value">
+                            <span>R$ 54,90</span>
+                            <span>- R$ 5,54</span>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="total">
+                        <span>total</span>
+                        <div class="value">
+                            <span>R$ 49,36</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

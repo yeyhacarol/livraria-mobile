@@ -19,3 +19,6 @@ function menuGeneros() {
         nav.style.transform = "translateX(0px)";
     }
 }
+
+document.getElementById('menu-principal').addEventListener('click', menuHeader)
+document.getElementById('menu-generos').addEventListener('click', menuGeneros)
