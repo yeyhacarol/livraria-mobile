@@ -496,7 +496,7 @@ header {
     #nav-items {
         width: 100%;
 
-        display: flex;
+        display: flex !important;
 
         position: absolute;
         z-index: 10;
