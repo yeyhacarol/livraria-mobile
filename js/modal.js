@@ -1,72 +1,58 @@
-const createModal = (catalogueItem) => {
+'use strict'
+
+const createModal = (product) => {
     const modalCard = document.createElement('div')
-    modalCard.setAttribute('id', 'modal-container')
+    modalCard.classList.add('modal-container')
     modalCard.innerHTML = 
-    `<div id="modal">
-        <div class="modal-content">
-            <div class="top">
-                <div class="book-gender">
-                    <button id="close-button">X</button>
-                    <img src="${catalogueItem.image}">
-                    <span>${catalogueItem.gender}</span>
-                </div>
-                <div class="book-info">
-                    <span>${catalogueItem.title}</span>
-                    <span>${catalogueItem.author}</span>
-                    <p>${catalogueItem.description}</p>
-                </div>
+        `<div class="book-content">
+            <div class="book">
+                <div id="close-modal">X</div>
+                <img src="${product.image}" alt="">
             </div>
-            <div class="line"></div>
-            <div class="finish">
-                <div class="freight-area">
-                    <span>Calcular entrega</span>
-                    <label>CEP</label>
-                    <div class="input-cep">
-                        <input type="search" class="search-cep">
-                        <button type="submit" class="calculate-cep">ok</button>
-                    </div>
-                </div>
-                <div class="prices">
-                    <div class="subtotal">
-                        <span>subtotal</span>
-                        <div class="value">
-                            <span>${catalogueItem.oldPrice}</span>
-                        </div>
-                    </div>
-                    <div class="total">
-                        <span>total</span>
-                        <div class="value">
-                            <span>${catalogueItem.newPrice}</span>
-                        </div>
-                    </div>
+            <div class="more-about-book">
+                <div class="book-description">
+                    <span class="title">${product.title}</span>
+                    <span class="author">${product.author}</span>
+                    <span class="description">${product.description}</span>
                 </div>
             </div>
         </div>
-    </div>`
+        <div class="line"></div>
+        <div class="prices-content">
+            <div class="freight-area">
+                <span>Calcular entrega</span>
+                <span>CEP</span>
+                <div class="calculate-freight">
+                    <input type="text">
+                    <button class="ok">ok</button>
+                </div>
+            </div>
+            <div class="book-prices">
+                <div class="subtotal">
+                    <span>subtotal</span>
+                    <div class="value">
+                        <span>${product.oldPrice}</span>
+                        <span>- </span>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="total">
+                    <span>total</span>
+                    <div class="value">
+                        <span>${product.newPrice}</span>
+                    </div>
+                </div>
+            </div>
+        </div>`
 
-    document.getElementById('modal-content').replaceChildren(modalCard)
-    document.getElementById('close-button').addEventListener('click', closeModal)
-    
     return modalCard
 }
 
-const modalGenerator = () => {
-    document.getElementById('modal-container').classList.toggle('active')
+const loadModal = (products) => {
+    const modal = document.getElementById('modal')
+    const modals = products.map(createModal)
+
+    modal.replaceChildren(...modals)
 }
 
-const closeModal = () => {
-    document.getElementById('modal-container').classList.remove('active')
-}
-
-const findCatalogueItem = (event) => {
-    createModal(catalogueItem)
-    modalGenerator()
-}
-
-document.querySelectorAll('.see-more')
-    .forEach(details => details.addEventListener('click', function(event)
-    {
-        catalogueDb.filter(catalogueItem => {
-            return catalogueItem.id == event.target.dataset.id
-        })
-    })) 
+export { loadModal }

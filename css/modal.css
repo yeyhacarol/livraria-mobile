@@ -36,7 +36,7 @@
     position: relative;
 }
 
-.close-modal {
+#close-modal {
     width: 30px;
     height: 30px;
 
@@ -45,6 +45,8 @@
     align-items: center;
     margin-bottom: 15px;
 
+    z-index: 100;
+    cursor: pointer;
     border: 1px solid #fff;
     font-size: 1.2rem;
     color: #fff;

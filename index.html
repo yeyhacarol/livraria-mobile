@@ -8,8 +8,8 @@
     <link rel="icon" type="image/x-icon" href="https://livromognoafricano.com.br/wp-content/uploads/2020/09/sebos-livros-2-white.png">
     <script src="js/menu-hamburguer.js" defer></script>
     <script src="js/slider.js" defer></script>
-    <script src="js/catalogue.js" defer></script>
-    <script src="js/modal.js" defer></script>
+    <script src="js/catalogue.js" type="module" defer></script>
+    <script src="js/modal.js" type="module" defer></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/modal.css">
     <title>BOOKERY STUDIO</title>
@@ -60,7 +60,7 @@
         </div>
     </section>
 
-    <section id="promotions">
+   <section id="promotions">
         <h1>promoções</h1>
 
         <div class="horizontal-scroll">
@@ -78,7 +78,7 @@
                                     <span class="new-price">R$ 36,79</span>
                                 </div>
                             </div>
-                            <div class="see-more">
+                            <div id="see-more">
                                 <div class="details-line"></div>
                                 <span>ver detalhes</span>
                             </div>
@@ -87,7 +87,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
 
     <section id="catalogue">
         <h1>catálogo</h1>
@@ -142,8 +142,8 @@
 
 
     <div id="modal">
-        <div class="modal-container">
-            <div class="book-content">
+        <!-- <div class="modal-container"> -->
+            <!-- <div class="book-content">
                 <div class="book">
                     <img src="img/legiao.png" alt="">
                 </div>
@@ -190,8 +190,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> -->
+        <!-- </div> -->
     </div>
 </body>
 

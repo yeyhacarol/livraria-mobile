@@ -1,4 +1,6 @@
 'use strict'
+/* 
+import { loadModal } from "./modal" */
 
 const catalogueDb = [
     {
@@ -37,8 +39,8 @@ const catalogueDb = [
         author: '',
         description: '',
         gender: '',
-        oldPrice: 'R$ 43,90',
-        newPrice: 'R$ 36,87',
+        oldPrice: 43.90,
+        newPrice: 36.87,
         image: './img/vitorianas-macabras.png',
     },
     {
@@ -48,7 +50,7 @@ const catalogueDb = [
         description: '',
         gender: 'terror',
         oldPrice: '',
-        newPrice: 'R$ 53,90',
+        newPrice: 53.90,
         image: './img/btk-profile.png',
     },
 ]
@@ -78,12 +80,14 @@ const createCard = (product) => {
                 <span class="new-price">${product.newPrice}</span>
             </div>
         </div>
-        <div class="see-more">
+        <div id="see-more" data-id="${product.id}">
             <div class="details-line"></div>
             <span>ver detalhes</span>
         </div>`
 
+
     return catalogueCard
+    
 }
 
 const loadCard = (products) => {
@@ -107,6 +111,16 @@ const loadCategory = (categories) => {
     container.replaceChildren(...genders)
 }
 
-
 loadCard(catalogueDb)
 loadCategory(categoriesDb)
+
+document.querySelectorAll('#see-more')
+    .forEach(book => book.addEventListener('click', function(event) {
+        let catalogueItem = catalogueDb.filter(product => {
+            return product.id == event.target.dataset.id
+
+            
+            
+        })[0]
+    }))
+
