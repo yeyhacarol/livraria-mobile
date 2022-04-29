@@ -55,4 +55,4 @@ const loadModal = (products) => {
     modal.replaceChildren(...modals)
 }
 
-export { loadModal }
+/* export { loadModal } */
