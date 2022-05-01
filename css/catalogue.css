@@ -1,0 +1,78 @@
+#catalogue {
+    min-height: 60vh;
+    margin-bottom: 100px;
+}
+
+.catalogue {
+    display: flex;
+    gap: 20px;
+}
+
+.catalogue-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    gap: 30px;
+}
+
+.catalogue-item {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 15px;
+}
+
+/* menu generos */
+.catalogue #nav {
+    width: 45px;
+    height: 45px;
+
+    z-index: 10;
+}
+
+.catalogue #nav img {
+    width: 50px;
+    height: 50px;
+}
+
+#nav-gender {
+    width: 250px;
+    height: 300px;
+
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #521616 transparent;
+
+    margin-top: -5.7px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #6B6B6B;
+
+    position: absolute;
+
+    z-index: 100;
+    transition: transform .5s ease-in-out;
+    transform: translateX(-245px);
+}
+
+#nav-gender::-webkit-scrollbar {
+    width: 6px; 
+}
+#nav-gender::-webkit-scrollbar-thumb {
+    background-color: #521616;
+}
+
+#nav-gender a {
+    font-size: 1.2rem;
+    color: #fff;
+    display: block;
+    padding: 10px 0px 10px 10px;
+    text-decoration: none;
+}
+
+#nav-gender a:hover {
+    background-color: #161920;
+}

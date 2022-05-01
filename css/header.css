@@ -1,0 +1,152 @@
+header {
+    width: 100%;
+    height: 70px;
+
+    position: absolute;
+    z-index: 30;
+
+    background-color: #fff;
+}
+
+.logo {
+    font-family: 'Inconsolata', monospace;
+
+    text-align: center;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.logo h2 {
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+#nav-items {
+    width: 100%;
+
+    display: none;
+
+    position: absolute;
+    z-index: 10;
+    top: 70px;
+
+    /* transition: transform .5s ease-in-out;
+    transform: translateY(-240px); */
+
+    background-color: #000;
+}
+
+#nav-items a {
+    font-size: 1.2rem;
+    color: #fff;
+
+    display: block;
+    padding: 10px 0px 10px 10px;
+    text-decoration: none;
+}
+
+.nav a.icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px 0px 0px 10px;
+
+    cursor: pointer;
+}
+
+.nav a.icon img {
+    width: 45px;
+    height: 40px;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    position: absolute;
+    right: 15px;
+    top: 15px;  
+    
+    z-index: 999;
+}
+
+.search img, #search-area img {
+    width: 45px;
+    height: 45px;
+
+    padding: 5px;
+
+    cursor: pointer;
+}
+
+.search img:hover {
+    background-size: 100%;
+    background-color: #b4b4b4;
+    border-radius: 50%;
+}
+
+#search-area {
+    width: 100%;
+    height: 50px;
+
+    background-color: #b4b4b4;
+    outline: 0;
+
+    display: none;
+    position: absolute;
+    top: 70px;
+    padding: 0px 15px;
+}
+#search-area img {
+    opacity: .5;
+    float: right;
+}
+
+#search-area input {
+    width: 50%;
+    outline: none;
+
+    position: absolute;
+}
+
+#search-area input, #search-area button {
+    height: 100%;
+    padding-left: 50px;
+    border: none;
+    
+    background-color: transparent;
+
+    font-family: 'Rokkitt';
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+@media screen and (min-width: 900px) {
+    #nav-items {
+        width: 100%;
+
+        display: flex !important;
+
+        position: absolute;
+        z-index: 10;
+        top: 15px;
+
+        background-color: transparent;
+    }
+
+    #nav-items a {
+        display: block;
+
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        color: #000;
+        text-decoration: none;
+    }
+
+    .nav a.icon img {
+        display: none;
+    }
+}

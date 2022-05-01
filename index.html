@@ -7,12 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon"
         href="https://livromognoafricano.com.br/wp-content/uploads/2020/09/sebos-livros-2-white.png">
+    <script src="js/search.js" defer></script>
     <script src="js/menu-hamburguer.js" defer></script>
-    <script src="js/slider.js" defer></script>
+    <script src="js/slider.js" type="module" defer></script>
     <script src="js/catalogue.js" type="module" defer></script>
     <script src="js/modal.js" type="module" defer></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/scroll.js" defer></script>
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="stylesheet" type="text/css" href="css/slider.css">
+    <link rel="stylesheet" type="text/css" href="css/catalogue.css">
     <link rel="stylesheet" type="text/css" href="css/modal.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
     <title>BOOKERY STUDIO</title>
 
     <script>
@@ -20,9 +28,16 @@
     </script>
 </head>
 
-<body>
+<body id="body">
     <header>
         <div class="nav">
+            <a class="search" id="search">
+                <img src="/img/icons/search.png" alt="lupa de pesquisa">
+            </a>
+            <div id="search-area">
+                <input type="text" placeholder="buscar...">
+                <img src="/img/icons/search.png" alt="lupa de pesquisa">
+            </div>
             <div class="logo">
                 <h1>BOOKERY</h1>
                 <h2>LIBRARY</h2>
@@ -31,9 +46,9 @@
                 <a href="#catalogue">Compre</a>
                 <a href="#promotions">Promoções</a>
                 <a href="#highlights">Destaques</a>
-                <a href="#">Contate-nos</a>
+                <a href="#contact-us">Contate-nos</a>
             </div>
-            <a href="javascript:void(0);" class="icon" id="menu-principal">
+            <a class="icon" id="menu-principal">
                 <img src="img/icons/menu-hamburguer.png" alt="menu">
             </a>
         </div>
@@ -49,45 +64,26 @@
         </div>
     </div>
 
-    <section id="highlights">
-        <h1>destaques</h1>
-
-        <div class="horizontal-scroll">
-            <div class="slider-container">
-                <div class="slider">
-                    <!-- feito com js -->
+    <section class="main-section">
+        <section id="highlights">
+            <h1>destaques</h1>
+    
+            <div class="horizontal-scroll">
+                <div class="slider-highlights highlights">
+                    <!-- js slider.js -->
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="promotions">
-        <h1>promoções</h1>
-
-        <div class="horizontal-scroll">
-            <div class="slider-container">
-                <div class="slider">
-                    <div class="slider-item-container">
-                        <div class="slider-item">
-                            <img src="img/ted-bundy.png" alt="livro ted bundy">
-                            <div class="details">
-                                <div class="title">
-                                    <span>ted bundy - um estranho ao seu lado</span>
-                                </div>
-                                <div class="prices">
-                                    <span class="old-price">R$ 68,90</span>
-                                    <span class="new-price">R$ 36,79</span>
-                                </div>
-                            </div>
-                            <div id="see-more">
-                                <div class="details-line"></div>
-                                <span>ver detalhes</span>
-                            </div>
-                        </div>
-                    </div>
+        </section>
+    
+        <section id="promotions">
+            <h1>promoções</h1>
+    
+            <div class="horizontal-scroll">
+                <div class="slider-promotions promotions">
+                    <!-- js slider.js -->
                 </div>
             </div>
-        </div>
+        </section>
     </section>
 
     <section id="catalogue">
@@ -99,12 +95,12 @@
                     <img src="img/icons/menu-genero.png" alt="menu">
                 </a>
                 <div id="nav-gender">
-                    <!-- feito com js -->
+                    <!-- js catalogue.js -->
                 </div>
             </div>
 
             <div class="catalogue-container">
-                <!-- feito com js -->
+                <!-- js catalogue.js -->
             </div>
 
         </div>
@@ -141,59 +137,11 @@
         </form>
     </footer>
 
-
     <div id="modal">
-        <div class="modal-container">
-            <div class="book-content">
-                <div class="header">
-                    <div class="header-content">
-                        <span class="title">legião</span>
-                        <span class="author">william p.</span>
-                    </div>
-                    <div id="close-modal">X</div>
-                </div>
-                <div class="book">
-                    <img src="img/legiao.png" alt="">
-                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Etiam tempor eu eros eget rhoncus. Fusce placerat nulla
-                        vel sagittis auctor. Interdum et malesuada fames ac ante
-                        ipsum primis in faucibus. Etiam volutpat condimentum
-                        tellus facilisis tincidunt. Nunc bibendum, felis eget sodales
-                        dapibus, massa purus pretium mi, quis elementum mi elit quis velit.
-                        Integer ut luctus odio, efficitur congue arcu. Cras porttitor posuere metus,
-                        tempor efficitur ipsum elementum quis. Aenean a neque porttitor lectus.
-                    </span>
-                </div>
-            </div>
-            <div class="line"></div>
-            <div class="prices-content">
-                <div class="freight-area">
-                    <span>Calcular entrega</span>
-                    <span>CEP</span>
-                    <div class="calculate-freight">
-                        <input type="text">
-                        <button class="ok">ok</button>
-                    </div>
-                </div>
-                <div class="book-prices">
-                    <div class="subtotal">
-                        <span>subtotal</span>
-                        <div class="value">
-                            <span>R$ 54,90</span>
-                            <span>- R$ 5,54</span>
-                        </div>
-                    </div>
-                    <div class="line"></div>
-                    <div class="total">
-                        <span>total</span>
-                        <div class="value">
-                            <span>R$ 49,36</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- js modal.js -->
     </div>
+
+    <span id="scroll-button">&rsaquo;</span>
 </body>
 
 </html>

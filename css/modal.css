@@ -1,7 +1,23 @@
 #modal {
+    display: none;
+}
+
+#modal.active {
     display: flex;
     justify-content: center;
+    align-items: center;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 100;
+
+    width: 100vw;
     height: 100vh;
+
+    background: rgba(0, 0, 0, 0.774);
 }
 
 .modal-container {
@@ -9,9 +25,6 @@
     height: 650px;
 
     padding: 10px;
-
-    /*  display: flex;
-    flex-direction: column; */
 
     background-color: #2d2d2d;
 }
@@ -48,14 +61,14 @@
     padding-right: 15px;
     overflow: hidden;
 
-    font-size: clamp(1.2rem, 5vw, 1.7rem);
+    font-size: clamp(1.3rem, 5vw, 1.7rem);
     font-weight: 500;
     color: #fff;
     text-align: center;
 }
 
 .header-content .author {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
     font-weight: 400;
     color: #fff;
 }
@@ -93,7 +106,7 @@
     height: 350px;
     overflow: hidden;
 
-    font-size: 1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     font-weight: lighter;
     color: #fff;
 
@@ -109,10 +122,12 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    margin-bottom: 15px;
 }
 
 .freight-area span {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 4vw, 1.4rem);
     color: #fff;
 }
 
@@ -130,6 +145,7 @@
     width: 30px;
     height: 30px;
 
+    cursor: pointer;
     background-color: #fff;
     border: 1px solid #fff;
     font-family: 'Rokkitt';
@@ -138,7 +154,7 @@
 }
 
 .book-prices {
-    font-size: 1.4rem;
+    font-size: clamp(1rem, 4vw, 1.4rem);
     color: #fff;
 }
 
@@ -156,7 +172,6 @@
 }
 
 @media screen and (max-width: 630px) {
-
     .book {
         display: inline-block;
         text-align: justify;
@@ -165,5 +180,22 @@
     .book img {
         float: left;
         margin-right: 20px;
+    }
+
+    .prices-content {
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 520px) {
+    .freight-area {
+        gap: 5px;
+        margin-bottom: 10px;
+    }
+
+    .calculate-freight input,
+    .calculate-freight button {
+        height: 25px;
     }
 }

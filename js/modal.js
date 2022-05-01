@@ -3,18 +3,19 @@
 const createModal = (product) => {
     const modalCard = document.createElement('div')
     modalCard.classList.add('modal-container')
-    modalCard.innerHTML = 
+    modalCard.id = 'modal-container'
+    modalCard.innerHTML =
         `<div class="book-content">
-            <div class="book">
-                <div id="close-modal">X</div>
-                <img src="${product.image}" alt="">
-            </div>
-            <div class="more-about-book">
-                <div class="book-description">
+            <div class="header">
+                <div class="header-content">
                     <span class="title">${product.title}</span>
                     <span class="author">${product.author}</span>
-                    <span class="description">${product.description}</span>
                 </div>
+                <div id="close-modal">X</div>
+            </div>
+            <div class="book">
+                <img src="${product.image}" alt="">
+                <span>${product.description}</span>
             </div>
         </div>
         <div class="line"></div>
@@ -31,15 +32,15 @@ const createModal = (product) => {
                 <div class="subtotal">
                     <span>subtotal</span>
                     <div class="value">
-                        <span>${product.oldPrice}</span>
-                        <span>- </span>
+                        <span>${product.oldPrice ? 'R$ ' + product.oldPrice.toFixed(2) : ''}</span>
+                        <span>R$ ${(product.oldPrice - product.newPrice).toFixed(2)}</span>
                     </div>
                 </div>
                 <div class="line"></div>
                 <div class="total">
                     <span>total</span>
                     <div class="value">
-                        <span>${product.newPrice}</span>
+                        <span>${product.newPrice ? 'R$ ' + product.newPrice.toFixed(2) : ''}</span>
                     </div>
                 </div>
             </div>
@@ -48,11 +49,19 @@ const createModal = (product) => {
     return modalCard
 }
 
-const loadModal = (products) => {
-    const modal = document.getElementById('modal')
-    const modals = products.map(createModal)
+const loadModal = (product) => {
+    const container = document.getElementById('modal')
+    const modal = createModal(product)
 
-    modal.replaceChildren(...modals)
+    container.replaceChildren(modal)
+
+    document.getElementById('close-modal').addEventListener('click', () => {
+        container.classList.remove('active')
+        document.getElementById('body').style.overflowY = 'auto'
+    })
 }
 
-/* export { loadModal } */
+export {
+    loadModal
+}
+

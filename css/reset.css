@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Rokkitt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Rokkitt:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Rokkitt:wght@300&display=swap');
+
+/* reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* considerações gerais */
+body {
+    font-family: 'Rokkitt', serif;
+    background-color: #000;
+}
+
+#highlights h1,
+#promotions h1,
+#catalogue h1 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+
+/* botão presente em todas as sections */
+#scroll-button {
+    width: 50px;
+    height: 50px;
+
+    color: #000;
+    font-size: 3.5rem;
+    background-color: #fff;
+    border-radius: 50%; 
+    cursor: pointer;
+
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 35px;
+    bottom: 20px;
+    padding-top: 4.5px;
+    transform: rotate(-90deg);
+}

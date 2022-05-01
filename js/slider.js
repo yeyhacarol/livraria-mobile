@@ -1,83 +1,148 @@
 'use strict'
-const destaques = [
-    {
-        id: '1',
-        url: './img/ted-bundy.png',
-        titulo: 'ted bundy - um estranho ao meu lado'
-    },
-    {
-        id: '2',
-        url: './img/livro-sangue.png',
-        titulo: 'livros de sangue - volume 1'
-    },
-    {
-        id: '3',
-        url: './img/frankstein.png',
-        titulo: 'frankstein'
-    },
-]
 
-const anterior = () => {
-    const anterior = document.createElement('span')
-    anterior.classList.add('slider-button')
-    anterior.id = 'anterior'
-    anterior.innerHTML = '&lsaquo;'
+import { loadModal } from "./modal.js"
+import { highlightsDb, promotionsDb } from "./bd/bd.js"
 
-    return anterior
+const previousButton = () => {
+    const previous = document.createElement('span')
+    previous.classList.add('previous')
+    previous.innerHTML = '&lsaquo;'
+
+    return previous
 }
 
-const proximo = () => {
-    const proximo = document.createElement('span')
-    proximo.classList.add('slider-button')
-    proximo.id = 'proximo'
-    proximo.innerHTML = '&rsaquo;'
+const nextButton = () => {
+    const next = document.createElement('span')
+    next.classList.add('next')
+    next.innerHTML = '&rsaquo;'
 
-    return proximo
+    return next
 }
 
-const gerarSlides = () => {
-    const sliderContainer = document.createElement('div')
-    sliderContainer.classList.add('slider-item-container')
+const highlightsSlider = () => {
+    const highlightsItems = document.createElement('div')
+    highlightsItems.classList.add('slider-container-highlights')
 
-    const slides = destaques.map(item => `
-        <div class="slider-item" id="slider-item">
+    const highlightsSlides = highlightsDb.map(item => `
+        <div class="slider-item-highlights">
             <img src="${item.url}">
-            <span>${item.titulo}</span>
+            <span>${item.title}</span>
         </div>`)
 
-    sliderContainer.innerHTML = slides.join("")
+    highlightsItems.innerHTML = highlightsSlides.join("")
 
-    return sliderContainer
+    return highlightsItems
 }
 
-const geraSlide = () => {
-    const slider = document.querySelector('.slider')
+const promotionsSlider = () => {
+    const promotionsItems = document.createElement('div')
+    promotionsItems.classList.add('slider-container-promotions')
 
-    slider.appendChild(anterior())
-    slider.appendChild(gerarSlides())
-    slider.appendChild(proximo())
+    const promotionsSlides = promotionsDb.map(item => `
+        <div class="slider-item-promotions">
+            <img src="${item.image}">
+            <div class="details">
+                <div class="title">
+                    <span>${item.title}</span>
+                </div>
+                <div class="prices">
+                    <span class="old-price">${'R$ ' + item.oldPrice}</span>
+                    <span class="new-price">${'R$ ' + item.newPrice}</span>
+                </div>
+            </div>
+            <div class="see-more">
+                <div class="details-line"></div>
+                <span data-id="${item.id}">ver detalhes</span>
+            </div>
+        </div>`)
+
+    promotionsItems.innerHTML = promotionsSlides.join("")
+
+    return promotionsItems
 }
 
-geraSlide(destaques)
+const loadHighlights = () => {
+    const slider = document.querySelector('.slider-highlights')
 
-const sliderItemContainer = document.querySelector('.slider-item-container')
-let sliderItems = document.querySelectorAll('.slider-item')
+    slider.appendChild(previousButton())
+    slider.appendChild(highlightsSlider())
+    slider.appendChild(nextButton())
+}
+const loadPromotions = () => {
+    const slider = document.querySelector('.slider-promotions')
 
-const itemAnterior = () => {
-    const ultimoItem = sliderItems[sliderItems.length - 1]
-
-    sliderItemContainer.prepend(ultimoItem)
-
-    sliderItems = document.querySelectorAll('.slider-item')
+    slider.appendChild(previousButton())
+    slider.appendChild(promotionsSlider())
+    slider.appendChild(nextButton())
 }
 
-const proximoItem = () => {
-    const primeiroItem = sliderItems[0]
+loadHighlights(highlightsDb)
+loadPromotions(promotionsDb)
 
-    sliderItemContainer.appendChild(primeiroItem)
+document.querySelectorAll('.see-more')
+    .forEach(book => book.addEventListener('click', function(event) {
 
-    sliderItems = document.querySelectorAll('.slider-item')
+        let promotionItem = promotionsDb.filter(product => {
+            return product.id == event.target.dataset.id
+        })[0]
+
+        loadModal(promotionItem)
+
+        document.getElementById('modal').classList.add('active')
+        document.getElementById('body').style.overflowY = 'hidden'
+
+    }))
+
+const highlightsContainer = document.querySelector('.slider-container-highlights')
+let highlights = document.querySelectorAll('.slider-item-highlights')
+
+const promotionsContainer = document.querySelector('.slider-container-promotions')
+let promotions = document.querySelectorAll('.slider-item-promotions')
+
+const nextItem = (e) => {
+    let parentElement = e.target.parentElement.children[1].children[0].className
+    const highlightsLastItem = highlights[highlights.length - 1]
+    const promotionsLastItem = promotions[promotions.length - 1]
+
+    if (parentElement == 'slider-item-highlights') {
+        highlightsContainer.prepend(highlightsLastItem)
+        highlights = document.querySelectorAll(`.${parentElement}`)
+    } else {
+        promotionsContainer.prepend(promotionsLastItem)
+        promotions = document.querySelectorAll(`.${parentElement}`)
+    }
 }
 
-document.getElementById('anterior').addEventListener('click', itemAnterior)
-document.getElementById('proximo').addEventListener('click', proximoItem) 
+const previousItem = (e) => {
+    let parentElement = e.target.parentElement.children[1].children[0].className
+    const highlightsFirstItem = highlights[0]
+    const promotionsFirstItem = promotions[0]
+
+    if (parentElement == 'slider-item-highlights') {
+        highlightsContainer.appendChild(highlightsFirstItem)
+        highlights = document.querySelectorAll(`.${parentElement}`)
+    } else {
+        promotionsContainer.appendChild(promotionsFirstItem)
+        promotions = document.querySelectorAll(`.${parentElement}`)
+    }
+
+}
+
+document.querySelectorAll('.previous')
+    .forEach(button => {
+        button.addEventListener('click', function (e) {
+            console.log(e.target.parentElement.classList[1])
+
+            previousItem(e)
+        }
+
+        )});
+
+document.querySelectorAll('.next')
+    .forEach(button => {
+        button.addEventListener('click', function (e) {
+
+            nextItem(e)
+        }
+
+        )});
