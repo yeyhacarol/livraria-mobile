@@ -56,7 +56,7 @@ const loadModal = (product) => {
     container.replaceChildren(modal)
 
     document.getElementById('close-modal').addEventListener('click', () => {
-        container.classList.remove('active')
+        container.removeAttribute('class')
         document.getElementById('body').style.overflowY = 'auto'
     })
 }
