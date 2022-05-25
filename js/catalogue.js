@@ -60,6 +60,7 @@ document.querySelectorAll('.see-more')
 
         document.getElementById('modal').classList.add('active')
         document.getElementById('body').style.overflowY = 'hidden'
+        document.getElementById('scroll-button').style.display = 'none'
 
     }))
 
