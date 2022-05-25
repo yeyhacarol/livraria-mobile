@@ -26,18 +26,34 @@
 
     margin-bottom: 10px;
 }
+.home-content h2 {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    color: #fff;
+}
 
 .shop-button {
     width: 110px;
-    height: 35px;
+    height: 40px;
 
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     border: 1px solid #fff;
+    background-color: transparent;
+
+    transition: all ease-in .3s;
 }
 
 .shop-button a {
     text-decoration: none;
     font-size: 1.5rem;
     color: #fff;
+}
+
+.shop-button:hover {
+    filter: invert(100%);
+    background-color: #b4b4b4;
+    text-shadow: 2px 2px #000;
 }

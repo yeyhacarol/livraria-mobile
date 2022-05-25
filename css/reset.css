@@ -17,6 +17,8 @@ html {
 body {
     font-family: 'Rokkitt', serif;
     background-color: #000;
+
+    user-select: none;
 }
 
 #highlights h1,
@@ -43,7 +45,7 @@ body {
     border-radius: 50%; 
     cursor: pointer;
 
-    z-index: 999;
+    z-index: 99;
     display: flex;
     justify-content: center;
     align-items: center;

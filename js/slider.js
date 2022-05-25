@@ -99,7 +99,7 @@ let highlights = document.querySelectorAll('.slider-item-highlights')
 const promotionsContainer = document.querySelector('.slider-container-promotions')
 let promotions = document.querySelectorAll('.slider-item-promotions')
 
-const nextItem = (e) => {
+const previousItem = (e) => {
     let parentElement = e.target.parentElement.children[1].children[0].className
     const highlightsLastItem = highlights[highlights.length - 1]
     const promotionsLastItem = promotions[promotions.length - 1]
@@ -113,7 +113,7 @@ const nextItem = (e) => {
     }
 }
 
-const previousItem = (e) => {
+const nextItem = (e) => {
     let parentElement = e.target.parentElement.children[1].children[0].className
     const highlightsFirstItem = highlights[0]
     const promotionsFirstItem = promotions[0]

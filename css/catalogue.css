@@ -5,7 +5,7 @@
 
 .catalogue {
     display: flex;
-    gap: 20px;
+    gap: 8%;
 }
 
 .catalogue-container {
@@ -29,6 +29,7 @@
     height: 45px;
 
     z-index: 10;
+    user-select: none;
 }
 
 .catalogue #nav img {
@@ -43,6 +44,7 @@
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: #521616 transparent;
+    cursor: pointer;
 
     margin-top: -5.7px;
 

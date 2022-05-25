@@ -33,9 +33,6 @@ header {
     z-index: 10;
     top: 70px;
 
-    /* transition: transform .5s ease-in-out;
-    transform: translateY(-240px); */
-
     background-color: #000;
 }
 

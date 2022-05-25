@@ -35,6 +35,8 @@
 
 .slider-container-highlights, 
 .slider-container-promotions{
+    width: 75%;
+
     display: flex;
 
     gap: 45px;
@@ -42,11 +44,18 @@
     overflow: hidden;
 }
 
+.slider-item-promotions:first-child, 
+.slider-item-highlights:first-child {
+    margin-left: -28%;
+}
+
 .slider-item-highlights,
 .slider-item-promotions {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    transition: all .5s;
 }
 
 .slider-item-highlights img,
@@ -153,5 +162,16 @@
     .previous, .next {
         display: none;
     }
+
+    .slider-item-promotions:first-child, 
+    .slider-item-highlights:first-child {
+        margin-left: 0%;
+    }
+
+    .slider-container-highlights, 
+    .slider-container-promotions {
+        width: 100%;
+    }
+    
 
 }
