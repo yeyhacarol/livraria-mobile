@@ -1,6 +1,6 @@
 'use strict'
 
-import { loadModal } from "./modal.js"
+import { loadModal, loadAddress } from "./modal.js"
 import { highlightsDb, promotionsDb } from "./bd/bd.js"
 
 const previousButton = () => {
@@ -91,6 +91,8 @@ document.querySelectorAll('.see-more')
         document.getElementById('modal').classList.add('active')
         document.getElementById('body').style.overflowY = 'hidden'
 
+        document.getElementById('ok').addEventListener('click', loadAddress)
+
     }))
 
 const highlightsContainer = document.querySelector('.slider-container-highlights')
@@ -131,12 +133,11 @@ const nextItem = (e) => {
 document.querySelectorAll('.previous')
     .forEach(button => {
         button.addEventListener('click', function (e) {
-            console.log(e.target.parentElement.classList[1])
 
             previousItem(e)
         }
 
-        )});
+)});
 
 document.querySelectorAll('.next')
     .forEach(button => {
@@ -145,4 +146,4 @@ document.querySelectorAll('.next')
             nextItem(e)
         }
 
-        )});
+)});

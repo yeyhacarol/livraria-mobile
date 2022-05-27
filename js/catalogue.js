@@ -2,6 +2,7 @@
 
 import { loadModal } from "./modal.js"
 import { catalogueDb, categoriesDb } from "./bd/bd.js"
+import { loadAddress } from "./modal.js"
 
 const createCard = (product) => {
     const catalogueCard = document.createElement('div')
@@ -61,7 +62,8 @@ document.querySelectorAll('.see-more')
         document.getElementById('modal').classList.add('active')
         document.getElementById('body').style.overflowY = 'hidden'
 
-    }))
+        document.getElementById('ok').addEventListener('click', loadAddress)
+}))
 
 export {
     catalogueDb

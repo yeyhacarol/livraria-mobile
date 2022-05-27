@@ -35,7 +35,7 @@
 
 .slider-container-highlights, 
 .slider-container-promotions{
-    width: 75%;
+    width: 85%;
 
     display: flex;
 
@@ -46,7 +46,7 @@
 
 .slider-item-promotions:first-child, 
 .slider-item-highlights:first-child {
-    margin-left: -28%;
+    margin-left: -38%;
 }
 
 .slider-item-highlights,

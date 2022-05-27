@@ -78,7 +78,7 @@ const catalogueDb = [
         gender: 'ficção',
         oldPrice: 54.90,
         newPrice: 49.41,
-        image: './img/vitorianas-macabras.png',
+        image: './img/antologia-dark.png',
     },
     {
         id: 2,

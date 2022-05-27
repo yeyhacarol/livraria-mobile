@@ -120,19 +120,20 @@
 }
 
 .freight-area {
+    width: 65%;
+
     display: flex;
     flex-direction: column;
-    gap: 10px;
-
-    margin-bottom: 15px;
 }
 
 .freight-area span {
     font-size: clamp(1rem, 4vw, 1.4rem);
     color: #fff;
+
+    margin-bottom: 10px;
 }
 
-.calculate-freight input {
+.input-cep input {
     width: 170px;
     height: 30px;
 
@@ -140,9 +141,16 @@
     font-family: 'Rokkitt';
     font-size: 1.2rem;
     font-weight: 500;
+
+    -moz-appearance: textfield;
+    appearance: textfield;
 }
 
-.calculate-freight button {
+.input-cep input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;  
+}
+
+.input-cep button {
     width: 30px;
     height: 30px;
 
@@ -154,7 +162,31 @@
     font-weight: 500;
 }
 
+#cep-return {
+    opacity: 0;
+}
+
+#cep-return.active {
+    width: 85%;
+
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+}
+
+#cep-return span {
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+#change-cep {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .book-prices {
+    width: 35%;
+
     font-size: clamp(1rem, 4vw, 1.4rem);
     color: #fff;
 }
@@ -198,5 +230,10 @@
     .calculate-freight input,
     .calculate-freight button {
         height: 25px;
+    }
+
+    .book span {
+        max-height: 300px;
+        overflow: hidden;
     }
 }
