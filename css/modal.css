@@ -33,6 +33,9 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+
+    
+    text-transform: lowercase;
 }
 
 .header {
@@ -87,6 +90,7 @@
     user-select: none;
     border: 1px solid #fff;
     font-size: 1.2rem;
+    text-transform: uppercase;
     color: #fff;
 }
 

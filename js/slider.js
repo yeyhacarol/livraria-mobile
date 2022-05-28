@@ -79,21 +79,6 @@ const loadPromotions = () => {
 loadHighlights(highlightsDb)
 loadPromotions(promotionsDb)
 
-document.querySelectorAll('.see-more')
-    .forEach(book => book.addEventListener('click', function(event) {
-
-        let promotionItem = promotionsDb.filter(product => {
-            return product.id == event.target.dataset.id
-        })[0]
-
-        loadModal(promotionItem)
-
-        document.getElementById('modal').classList.add('active')
-        document.getElementById('body').style.overflowY = 'hidden'
-
-        document.getElementById('ok').addEventListener('click', loadAddress)
-
-    }))
 
 const highlightsContainer = document.querySelector('.slider-container-highlights')
 let highlights = document.querySelectorAll('.slider-item-highlights')

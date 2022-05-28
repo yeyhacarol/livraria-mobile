@@ -9,7 +9,9 @@
         href="https://livromognoafricano.com.br/wp-content/uploads/2020/09/sebos-livros-2-white.png">
     <script src="js/search.js" defer></script>
     <script src="js/menu-hamburguer.js" defer></script>
-    <script src="js/slider.js" type="module" defer></script>
+    <!-- <script src="js/slider.js" type="module" defer></script> -->
+    <script src="js/highlight-slide.js" type="module" defer></script>
+    <script src="js/promotion-slide.js" type="module" defer></script>
     <script src="js/catalogue.js" type="module" defer></script>
     <script src="js/modal.js" type="module" defer></script>
     <script src="js/scroll.js" defer></script>
@@ -55,7 +57,7 @@
     </header>
 
     <div id="home">
-        <img src="img/background-home.png" alt="estante de livros">
+        <img src="img/issets/background-home.png" alt="estante de livros">
         <div class="home-content">
             <h2>bookery library&copy;</h2>
             <h1>construa sua mente.</h1>
@@ -68,22 +70,27 @@
     <section class="main-section">
         <section id="highlights">
             <h1>destaques</h1>
-    
-            <div class="horizontal-scroll">
-                <div class="slider-highlights highlights">
-                    <!-- js slider.js -->
+
+            <div class="highlight-container">
+                <div id="highlight-slider">
+                    
                 </div>
+                <span id="prev">&lsaquo;</span>
+                <span id="next">&rsaquo;</span>
             </div>
         </section>
-    
+
         <section id="promotions">
             <h1>promoções</h1>
-    
-            <div class="horizontal-scroll">
-                <div class="slider-promotions promotions">
-                    <!-- js slider.js -->
+
+            <div class="promotion-container">
+                <div id="promotion-slider">
+
                 </div>
+                <span id="previous">&lsaquo;</span>
+                <span id="nexting">&rsaquo;</span>
             </div>
+
         </section>
     </section>
 
@@ -96,12 +103,12 @@
                     <img src="img/icons/menu-genero.png" alt="menu">
                 </a>
                 <div id="nav-gender">
-                    <!-- js catalogue.js -->
+                    
                 </div>
             </div>
 
             <div class="catalogue-container">
-                <!-- js catalogue.js -->
+                
             </div>
 
         </div>
@@ -109,7 +116,7 @@
 
     <footer>
         <div class="about-us">
-            <img src="img/background-footer.png" alt="estante de livros">
+            <img src="img/issets/background-footer.png" alt="estante de livros">
             <h1>A BOOKEY STUDIO</h1>
             <div class="line"></div>
             <span>tornando páginas uma experiência exótica.</span>

@@ -1,18 +1,34 @@
-/* slider */
-.horizontal-scroll {
-    overflow-x: hidden;  
-}
-
-.slider-highlights, .slider-promotions {
-    width: auto;
-
-    padding: 0px 10px;
+.highlight-container, 
+.promotion-container {
+    width: 100%;
+    padding: 0 20px;
+    
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    margin-bottom: 50px;
+    position: relative;
 }
 
-.previous, .next {
+#highlight-slider {
+    height: 300px;
+}
+
+#highlight-slider,
+#promotion-slider {
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+#highlight-slider::-webkit-scrollbar,
+#promotion-slider::-webkit-scrollbar {
+    height: 0;
+}
+
+#prev,
+#next, 
+#previous,
+#nexting {
     width: 40px;
     height: 40px;
     padding-top: 3.5px;
@@ -21,75 +37,59 @@
     align-items: center;
     justify-content: center;
 
-    font-size: 4rem;
+    font-size: 3rem;
     color: #000;
     background-color: #fff;
 
     border-radius: 50%;
     cursor: pointer;
+    
+    position: absolute;
+} 
+
+#prev, #previous {
+    top: 50%;
+    left: 0;
+    transform: translate(50%, -50%);
+    display: none;
 }
 
-.next {
+#next, #nexting {
+    top: 50%;
     right: 0;
+    transform: translate(-50%, -50%);
 }
 
-.slider-container-highlights, 
-.slider-container-promotions{
-    width: 85%;
-
+#highlight-slider-content,
+#promotion-slider-content {
     display: flex;
 
     gap: 45px;
-
-    overflow: hidden;
 }
 
-.slider-item-promotions:first-child, 
-.slider-item-highlights:first-child {
-    margin-left: -38%;
-}
+.highlight-slider-item {
+    width: 250px;
+    height: 300px;
 
-.slider-item-highlights,
-.slider-item-promotions {
     display: flex;
     flex-direction: column;
-    align-items: center;
-
-    transition: all .5s;
 }
 
-.slider-item-highlights img,
-.slider-item-promotions img,
-.catalogue-item img {
+.highlight-slider-item img, 
+.promotion-slider-item img {
     width: 250px;
     height: 250px;
 
+    background-color: #fff;
     object-fit: cover;
 }
 
-.slider-item-highlights span,
-.slider-item-promotions span,
-.catalogue-item span {
-    width: 250px;
+.highlight-slider-item span {
     height: 100px;
 
-    font-size: 1.5rem;
+    font-size: 1.5rem; 
+    text-transform: lowercase;
     color: #fff;
-}
-
-/* destaques */
-#highlights {
-    width: 100%;
-    margin-bottom: 50px;
-}
-
-/* promoções */
-#promotions {
-    margin-bottom: 50px;
-}
-
-#promotions .horizontal-scroll {
-    padding-bottom: 30px;
 }
 
 .details {
@@ -97,6 +97,7 @@
     height: 120px;
 
     padding: 5px;
+    margin-top: -6px;
 
     background-color: #b4b4b4;
 }
@@ -106,21 +107,20 @@
     height: 80px;
 }
 
-.details span:first-child {
+.title span {
     font-size: 1.3rem;
     font-weight: lighter;
-
-    color: #000;
-}
-
-.prices .new-price {
-    font-weight: bold;
-    color: #000;
+    text-transform: lowercase;
 }
 
 .prices .old-price {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-decoration: line-through;
+}
+
+.prices .new-price {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .see-more {
@@ -128,50 +128,24 @@
     height: 50px;
 
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
 
     background-color: #521616;
 }
 
 .see-more span {
-    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #fff;
 }
 
-.details-line {
-    width: 100%;
-    border: 1px solid #161616;
-
-    margin-bottom: 10px;
-}
-
-/* catálogo */
-
-
-@media screen and (max-width: 900px) {
-
-    .horizontal-scroll {
-        display: -ms-flexbox;
-        display: flex;
-
-        overflow-x: scroll;
-        -webkit-overflow-scrolling: touch;
+@media screen and (max-width: 480px) { 
+    #prev,
+    #next {
+        display: none !important;
     }
-
-    .previous, .next {
-        display: none;
-    }
-
-    .slider-item-promotions:first-child, 
-    .slider-item-highlights:first-child {
-        margin-left: 0%;
-    }
-
-    .slider-container-highlights, 
-    .slider-container-promotions {
-        width: 100%;
-    }
-    
 
 }

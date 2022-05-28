@@ -23,6 +23,14 @@
     margin-bottom: 15px;
 }
 
+.catalogue-item img {
+    width: 250px;
+    height: 250px;
+
+    background-color: #fff;
+    object-fit: cover;
+}
+
 /* menu generos */
 .catalogue #nav {
     width: 45px;
