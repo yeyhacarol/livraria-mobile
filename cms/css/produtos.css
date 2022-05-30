@@ -1,0 +1,248 @@
+.product-insert {
+    width: 50%;
+    height: 500px;
+
+    margin: auto;
+    display: flex;
+    justify-content: center;
+
+    padding: 20px;
+    gap: 50px;
+
+    border: 1px solid #000;
+}
+
+.product-insert span {
+    user-select: none;
+}
+
+.product {
+    width: 50%;
+}
+
+.image-container {
+    width: 250px;
+    height: 250px;
+
+    position: relative;
+    margin-bottom: 15px
+}
+
+#image-input,
+#highlight {
+    display: none;
+}
+
+.highlight {
+    margin-bottom: 20px;
+}
+
+#image-label {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    cursor: pointer;
+}
+
+#cadaster-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+input[type="checkbox"]+label {
+    position: relative;
+    padding-left: 30px;
+
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.2rem;
+}
+
+input[type="checkbox"]+label::before {
+    content: "";
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+    left: 0;
+    bottom: 0;
+
+    border: 1px solid;
+}
+
+input[type="checkbox"]:checked+label::after {
+    content: "";
+    position: absolute;
+
+    left: 5px;
+    bottom: 5px;
+    width: 10px;
+    height: 25px;
+
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transform: rotate(45deg);
+}
+
+select {
+    width: 200px;
+    height: 30px;
+    margin-bottom: 20px;
+
+    border: 1px solid;
+    font-size: 1rem;
+    font-family: 'Rokkitt';
+}
+
+.prices {
+    display: flex;
+    gap: 15px;
+}
+
+.price, .promotion {
+    display: flex;
+    flex-direction: column;
+}
+
+.price span, .promotion span {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.price input, .promotion input {
+    width: 90px;
+    height: 30px;
+    border: 1px solid;
+    font-family: 'Rokkitt';
+    font-size: 1.1rem;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.description {
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.description span {
+    font-size: 1.2rem;
+}
+
+.description .title,
+.description .author,
+.description .describe-book {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    height: 250px;
+    border: 1px solid;
+    outline-style: none;
+
+    font-family: 'Rokkitt';
+    font-size: 1.1rem;
+}
+
+.description input {
+    width: 100%;
+    height: 30px;
+    border: 1px solid;
+
+    font-family: 'Rokkitt';
+    font-size: 1.1rem;
+
+    outline-style: none;
+}
+
+.description input:focus,
+textarea:focus {
+    border: 2px solid #5e0707;
+}
+
+.product-insert .send {
+    margin: auto;
+}
+
+.save-product {
+    width: 150px !important;
+    height: 45px !important;
+    
+    font-weight: 600;
+    background-color:  transparent;
+    cursor: pointer;
+
+    border: 1px solid black;
+    transition: all .5s;
+}
+
+.save-product:hover {
+    background-color: #5e0707;
+    color: white;
+
+    transition: all .5s;
+    transform: scale(1.1);
+}
+
+.products {
+    width: 90%;
+    min-height: 400px;
+    height: auto;
+
+    margin: auto;
+
+    border: 1px solid;
+}
+
+.products-content, .products-data {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    border-bottom: 1px solid;
+}
+
+.product-data {
+    font-size: 1.1rem;
+
+    border: 1px solid;
+
+    width: 300px;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-data img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}

@@ -1,0 +1,122 @@
+.category {
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40%;
+    height: 300px;
+
+    border: 1px solid black;
+
+    margin-bottom: 50px;
+}
+
+.insert {
+    width: 80%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gender {
+    font-size: clamp(1.4rem, 2vw, 1.6rem);
+
+    margin-bottom: 20px;
+}
+
+.insert input {
+    border: 1px solid black;
+
+    font-family: 'Rokkitt', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.input-gender {
+    width: 90%;
+    height: 40px; 
+
+    margin-bottom: 30px;
+}
+
+.save-gender {
+    width: 35%;
+    height: 45px;
+    
+    font-weight: 600;
+    background-color:  transparent;
+    cursor: pointer;
+
+    border: 1px solid black;
+    transition: all .5s;
+}
+
+.save-gender:hover {
+    background-color: #5e0707;
+    color: white;
+
+    transition: all .5s;
+    transform: scale(1.1);
+}
+
+/* lista de generos */
+.categories-content {
+    width: 40%;
+    height: 200px;
+
+    margin: auto;
+}
+
+.categories {
+    width: 100%;
+    min-height: 500px;
+    height: auto;
+}
+
+.categoriesInfo {
+    text-align: center;
+}
+
+.categoriesInfo, .categoriesData {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+}
+
+.gender-data {
+    width: 75%;
+}
+
+.actions {
+    width: 25%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.actions img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    margin-right: 15px;
+}
+
+.edit {
+    width: 70% !important;
+    height: 95% !important;
+}
+
+.categoriesData .gender-data {
+    padding-left: 10px;
+}
+
+.gender-data, .actions {
+    font-size: clamp(1.3rem, 2vw, 1.5rem);
+    padding-top: 10px;
+    border: 1px solid black;
+}

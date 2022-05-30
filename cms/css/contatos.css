@@ -1,0 +1,54 @@
+.contacts {
+    width: 60%;
+    min-height: 500px;
+    height: auto;
+
+    margin: auto;
+
+    border: 1px solid black;
+}
+
+.contactInfo {
+    text-align: center;
+}
+
+.contactInfo, .contactData {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.contactData {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name {
+    width: 40%;
+}
+
+.email {
+    width: 50%;
+}
+
+.options {
+    width: 20%;
+}
+
+.options img {
+    width: 40px;
+    height: 100%;
+}
+
+.contactData .name,
+.contactData .email {
+    padding-left: 10px;
+}
+
+.name, .email, .options {
+    font-size: clamp(1.0rem, 2vw, 1.3rem);
+    padding-top: 10px;
+    border: 1px solid black;
+}
