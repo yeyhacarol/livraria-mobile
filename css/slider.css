@@ -152,8 +152,8 @@
 }
 
 @media screen and (max-width: 480px) { 
-    #prev,
-    #next {
+    #prev, #previous,
+    #next, #nexting {
         display: none !important;
     }
 
